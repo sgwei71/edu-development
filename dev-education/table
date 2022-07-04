@@ -79,11 +79,16 @@ jenkins설치시 에러 발생.
 -- touch: cannot touch '/var/jenkins_home/copy_reference_file.log': Permission denied
 sudo chown 1000 <볼륨으로 사용할 디렉터리>
  #GIT token 
- sgwei71
-<<<<<<< HEAD
-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
+sgwei71
+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
 dev.edu 
-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
+ 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
+ edu-token
+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 
+edu-token1
+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
+edu-token2
+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
  
  JDK 설치
  sudo apt update && sudo apt upgrade -y
@@ -106,16 +111,7 @@ docker run -it -p 8080:8080 --name registry-web --link registry -e REGISTRY_URL=
 ocker ps -q --filter "name=jenkins-testapp" | grep -q . && docker stop jenkins-testapp && docker rm jenkins-testapp | true
 docker run -p 8081:8080 -d --name=jenkins-testapp jenkins/testapp
 docker rmi -f $(docker images -f "dangling=true" -q) || true
-sgwei71
-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
-dev.edu 
- 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
- edu-token
-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 
-edu-token1
-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
-edu-token2
-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
+
 
  JDK 설치
  sudo apt update && sudo apt upgrade -y

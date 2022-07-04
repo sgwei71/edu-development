@@ -73,6 +73,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 sudo usermod -aG docker growman # growman 사용자에게 권한 주기
 sudo deluser growman docker # growman] 사용자의 docker 권한 제거
+docker-compose -f dockercompose.yml up -d
 
 jenkins설치시 에러 발생. 
 -- touch: cannot touch '/var/jenkins_home/copy_reference_file.log': Permission denied
@@ -109,7 +110,9 @@ sgwei71
 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
 dev.edu 
  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
- 
+ edu-token
+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
+
  JDK 설치
  sudo apt update && sudo apt upgrade -y
  apt-cache search openjdk

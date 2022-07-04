@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <div>
+    <table border="1">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>로그인 아이디</th>
+		<th>이름</th>
+		<th>우편번호</th>
+		<th>주소</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.loginId}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.zipNo}"></td>
+        <td th:text="${user.address}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- /container -->
+</body>
+</html>

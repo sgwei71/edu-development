@@ -1,0 +1,118 @@
+sudo docker exec -it mysql-edu bash
+mysql -u root -p
+
+CREATE DATABASE education;
+CREATE USER 'user1'@'localhost' IDENTIFIED BY 'Abcde12345!';
+CREATE USER 'user1'@'%' IDENTIFIED BY 'Abcde12345!';
+GRANT ALL PRIVILEGES ON education.* TO 'user1'@'localhost';
+GRANT ALL PRIVILEGES ON education.* TO 'user1'@'%';
+FLUSH PRIVILEGES;
+
+root/ Abcde12345!
+
+CREATE TABLE `education`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `login_id` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `zip_no` VARCHAR(20) NOT NULL,
+  `address` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `idnew_table_UNIQUE` (`id` ASC) VISIBLE,
+  UNIQUE INDEX `login_id_UNIQUE` (`login_id` ASC) VISIBLE);
+  
+   insert into user (login_id, name, zip_no, address)
+  values ('sgwei71',' 위성규','111-111','서울시 중구 을지로 82'),
+  ('sgwei72',' 위성규','111-111','서울시 중구 을지로 82') ,
+  ('sgwei73',' 위성규','111-111','서울시 중구 을지로 82');
+  
+  truncate table education.user;
+  
+  sudo docker run --name mysql-edu -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql:8.0.29
+  
+  GRANT ALL ON *.* TO 'root'@'127.0.0.1' IDENTIFIED BY 'password' WITH GRANT OPTION;
+  
+  ?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
+  
+  ALTER user 'root'@'%' IDENTIFIED WITH mysql_native_password BY '12345678!'
+  
+  docker exec -it mysql-container bash
+  
+  
+  select user, host, plugin from mysql.user;
+  
+  docker pull jenkins/jenkins:lts
+  
+  docker run --name jenkins -itd --publish 8080:8080 --volume /home/growman/jenkins:/var/jenkins_home --privileged=true jenkins/jenkins:lts
+  
+  docker image tag docker.io/jenkins/jenkins:lts jenkins:lts
+  
+  docker rmi docker.io/jenkins/jenkins:lts jenkins:lts
+  
+  docker 설치
+  # 패키지 다운로드
+  sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+  # Docker GPG 키 추가
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  # Docker GPG 키 등록 확인
+sudo apt-key fingerprint 0EBFCD88
+# Docker 저장소 등록
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+Docker Engine 설치
+sudo apt-get update
+
+# Docker 최신버전 설치
+sudo apt-get install docker-ce docker-ce-cli containerd.io 
+
+# Docker 버전 확인
+docker -v
+
+Docker Compose 설치
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+sudo usermod -aG docker growman # growman 사용자에게 권한 주기
+sudo deluser growman docker # growman] 사용자의 docker 권한 제거
+
+jenkins설치시 에러 발생. 
+-- touch: cannot touch '/var/jenkins_home/copy_reference_file.log': Permission denied
+sudo chown 1000 <볼륨으로 사용할 디렉터리>
+ #GIT token 
+ sgwei71
+<<<<<<< HEAD
+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
+dev.edu 
+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
+ 
+ JDK 설치
+ sudo apt update && sudo apt upgrade -y
+ apt-cache search openjdk
+ sudo apt-get install openjdk-17-jre -y
+ sudo apt-get install openjdk-17-jdk -y
+
+docker registry 확인
+curl -X GET http://localhost:15000/v2/_catalog
+curl -X GET http://localhost:15000/v2/myapp/tags/list
+
+#docker-registry-web 설치
+docker pull hyper/docker-registry-web
+
+# docker run -it -p 8080:8080 --name [hyper/registry-web 이미지가 사용할 컨테이너명] --list [현재 동작중인 registry 컨테이너명] -e REGISTRY_URL=http://[현재 동작중인 registry 컨테이너명]:[현재 동작중인 registry 포트]/v2 -e REGISTRY_NAME=localhost:5000 hyper/docker-registry-web
+docker run -it -p 8080:8080 --name registry-web --link registry -e REGISTRY_URL=http://registry:5000/v2 -e REGISTRY_NAME=localhost:5000 hyper/docker-registry-web 
+
+
+
+ocker ps -q --filter "name=jenkins-testapp" | grep -q . && docker stop jenkins-testapp && docker rm jenkins-testapp | true
+docker run -p 8081:8080 -d --name=jenkins-testapp jenkins/testapp
+docker rmi -f $(docker images -f "dangling=true" -q) || true
+sgwei71
+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
+dev.edu 
+ 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
+ 
+ JDK 설치
+ sudo apt update && sudo apt upgrade -y
+ apt-cache search openjdk
+ sudo apt-get install openjdk-17-jre -y
+ sudo apt-get install openjdk-17-jdk -y
+>>>>>>> refs/remotes/origin/master

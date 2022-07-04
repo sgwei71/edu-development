@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+#For THYMELEAF
+spring:
+  datasource:
+    username: user1
+    password: Abcde12345!
+    mapper-locations: classpath:/mapper/**/*.xml
+    jdbc-url: jdbc:mysql://175.45.192.78:13306/education
+    driver: com.mysql.cj.jdbc.Driver
+  #dbc-url: jdbc:mysql://192.168.56.101:3306/education
+  #FOR JSP - jsp를 쓰는 경우 필요한 resolver 속성, 쓰지 않으니 주석처리
+  #mvc:
+  #  view:
+  #    prefix: /WEB-INF/view 
+  #    tis: .jsp
+  thymeleaf:
+    enabled: true
+    encoding: UTF-8
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
+    
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  config-location: classpath:/mybatis/mybatis-config.xml

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default}">
+	<h2>실습1 : 제목 변경 테스트...입니다.</h2>
+	<!-- 실습 영역 
+    <h2 th:text="${title}"></h2>
+    -->
+	<th:block layout:fragment="customContents">
+		<form th:action="@{/addUser}" method="post" >
+			<table border="1">
+				<tbody>
+					<tr>
+						<td>로그인 아이디</td>
+						<td>
+							<input type="text" name="loginId">
+						</td>
+					</tr>
+					<tr>
+						<td>이름</td>
+						<td>
+							<input type="text" name="name">
+						</td>
+					</tr>
+					<tr>
+						<td>우편번호</td>
+						<td>
+							<input type="text" name="zipNo">
+						</td>
+					</tr>
+					<tr>
+						<td>주소</td>
+						<td>
+							<input type="text" name="address">
+						</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2">
+							<button type="submit">사용자등록</button>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</form>
+	</th:block>
+</html>

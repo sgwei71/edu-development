@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edu.dao.UserDao">
+
+    <select id="findAll"  resultType="com.edu.domain.User">
+<!--
+         SELECT
+                id
+             ,	login_id
+             ,  name
+             , zip_no
+             , address
+        FROM
+            user
+        ORDER by
+            id asc
+  -->
+     </select>
+    <select id="findByLoginId" resultType="com.edu.domain.User">
+        SELECT
+                id
+             ,	login_id
+             ,  name
+             , zip_no
+             , address
+        FROM
+            user
+        Where
+        	login_id =#{loginId}
+        ORDER by
+            id asc
+    </select>
+    <select id="findByNmae" resultType="com.edu.domain.User">
+        SELECT
+                id
+             ,	login_id
+             ,  name
+             , zip_no
+             , address
+        FROM
+            user
+        Where
+        	login_id =#{name}
+        ORDER by
+            id asc
+    </select>
+    <insert id="addUser"  parameterType="com.edu.domain.User" >
+		/* 회원가입 */
+		INSERT INTO user
+		(	 login_id
+			, name
+			, zip_no
+			, address
+		)VALUES (
+			#{loginId}
+			, #{name}
+			, #{zipNo}
+			, #{address}
+		);
+    </insert>
+</mapper>

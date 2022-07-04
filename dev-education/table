@@ -119,6 +119,7 @@ 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
 edu-token3
 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
 
+
  JDK 설치
  sudo apt update && sudo apt upgrade -y
  apt-cache search openjdk

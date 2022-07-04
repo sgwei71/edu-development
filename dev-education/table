@@ -112,6 +112,8 @@ dev.edu
  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
  edu-token
 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 
+edu-token1
+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
 
  JDK 설치
  sudo apt update && sudo apt upgrade -y

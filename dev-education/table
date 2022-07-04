@@ -91,7 +91,7 @@ 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
  sudo apt-get install openjdk-17-jre -y
  sudo apt-get install openjdk-17-jdk -y
 
-docker registry 확인
+docker registry 확인 
 curl -X GET http://localhost:15000/v2/_catalog
 curl -X GET http://localhost:15000/v2/myapp/tags/list
 

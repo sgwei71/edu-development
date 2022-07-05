@@ -97,6 +97,9 @@ edu-token5
 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
 edu-token6
 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
+edu-token7
+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 
+
  JDK 설치
  sudo apt update && sudo apt upgrade -y
  apt-cache search openjdk

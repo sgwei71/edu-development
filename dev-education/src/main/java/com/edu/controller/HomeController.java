@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 	@GetMapping("/health")
 	public String home(Model model) {
-		model.addAttribute("title","정상페이지");
+		model.addAttribute("title","헬스체크");
 		return "home";
 	}
 }

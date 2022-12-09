@@ -11,8 +11,9 @@ public class HomeController {
 		model.addAttribute("title","사용자가입");
 		return "home";
 	}
+	
 	@GetMapping("/healthy")
-	public String home(Model model) {
+	public String healthy(Model model) {
 		return "ok";
 	}
 }

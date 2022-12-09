@@ -3,7 +3,7 @@
 <mapper namespace="com.edu.dao.UserDao">
 
     <select id="findAll"  resultType="com.edu.domain.User">
-<!--          SELECT
+          SELECT
                 id
              ,	login_id
              ,  name
@@ -12,7 +12,7 @@
         FROM
             user
         ORDER by
-            id asc -->
+            id asc
      </select>
     <select id="findByLoginId" resultType="com.edu.domain.User">
         SELECT

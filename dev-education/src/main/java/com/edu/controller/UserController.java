@@ -27,7 +27,7 @@ public class UserController {
 	@GetMapping("/home")
 	public String home(Model model) {
 		logger.debug("intpu model {}", model);
-//		model.addAttribute("title", "사용자 가입");
+		model.addAttribute("title", "사용자 가입");
 
 		return "home";
 	}
